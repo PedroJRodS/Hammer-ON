@@ -3,12 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+//Laravel_Breeze
 Route::get('/', function () {
     return view('auth.login');
-});
-
-Route::get('/master', function () {
-    return view('home');
 });
 
 Route::get('/dashboard', function () {
