@@ -5,7 +5,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AcessorioController;
 use App\Http\Controllers\InstrumentoController;
 
-//Laravel_Breeze
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -22,9 +21,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-//Controllers pros CRUDS
-
-//Instrumentos
 Route::get('/instrumentos', [InstrumentoController::class, 'index'])->name('instrumentos.index');
 Route::get('/instrumentos/create', [InstrumentoController::class, 'create'])->name('instrumentos.create');
 Route::post('/instrumentos', [InstrumentoController::class, 'store'])->name('instrumentos.store');
@@ -33,7 +29,6 @@ Route::get('/instrumentos/{instrumento}/edit', [InstrumentoController::class, 'e
 Route::put('/instrumentos/{instrumento}', [InstrumentoController::class, 'update'])->name('instrumentos.update');
 Route::delete('/instrumentos/{instrumento}', [InstrumentoController::class, 'destroy'])->name('instrumentos.destroy');
 
-//Acessórios
 Route::get('/acessorios', [AcessorioController::class, 'index'])->name('acessorios.index');
 Route::get('/acessorios/create', [AcessorioController::class, 'create'])->name('acessorios.create');
 Route::post('/acessorios', [AcessorioController::class, 'store'])->name('acessorios.store');
