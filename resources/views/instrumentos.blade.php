@@ -22,7 +22,7 @@
             <div class="container mx-auto px-4">
                 <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                     @foreach ($instrumentos as $instrumento)
-                    <li>{{ $instrumento->nome }} | <a href="{{ route('instrumentos.edit', ['instrumento' => $instrumento->id]) }}">Editar</a> | <a href="">Deletar</a>
+                    <li>{{ $instrumento->nome }} | {{ $instrumento->modelo }} | {{ $instrumento->marca }} | {{ $instrumento->tipo }} | {{ $instrumento->preço }} | <a href="{{ route('instrumentos.edit', ['instrumento' => $instrumento->id]) }}">Editar</a> | <a href="">Deletar</a>
                     </li>
                     @endforeach
                 </ul>
