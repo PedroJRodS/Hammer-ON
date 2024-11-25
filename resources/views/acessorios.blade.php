@@ -11,11 +11,12 @@
 <body>
 
     <x-app-layout>
-        <x-slot name="header">
+        <x-slot name="body">
             <div class="container mx-auto px-4">
-                <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    {{ __('Dashboard') }}
-                </div>
+                <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    <p>tg3rfgt25f4rg</p>
+                    <p>234f4rtf324tg35r</p>
+                </ul>
             </div>
         </x-slot>
     </x-app-layout>
