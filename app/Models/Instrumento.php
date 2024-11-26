@@ -10,12 +10,11 @@ class Instrumento extends Model
 {
     use HasFactory;
 
-    protected $filliable = [
+    protected $fillable = [
         'nome',
         'modelo',
         'marca',
         'tipo',
         'preço',
-        'id'
     ];
 }
