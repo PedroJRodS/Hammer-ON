@@ -24,7 +24,13 @@
                 <hr>
                 <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                     @foreach ($instrumentos as $instrumento)
-                    <li>{{ $instrumento->nome }}|{{ $instrumento->modelo }}|{{ $instrumento->marca }}|{{ $instrumento->tipo }}|{{ $instrumento->preço }} | <a href="{{ route('instrumentos.edit', ['instrumento' => $instrumento->id]) }}">Editar</a> | <a href="">Deletar</a>
+                    <li>{{ $instrumento->nome }}|{{ $instrumento->modelo }}|{{ $instrumento->marca }}|{{ $instrumento->tipo }}|{{ $instrumento->preço }}|<br>
+                        <a href="{{ route('instrumentos.edit', ['instrumento' => $instrumento->id]) }}">Editar</a>
+                        <form action="{{ route('instrumentos.destroy',['instrumento' => $instrumento->id]) }}" method="post">
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Deletar</button>
+                        </form>
                         <hr>
                     </li>
                     @endforeach
