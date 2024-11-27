@@ -17,15 +17,13 @@ class AcessorioController extends Controller
 
     public function index()
     {
-        //
+        $acessorios = $this->acessorio->all();
+        return view('acessorios', ['acessorios' => $acessorios]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('acessorio_create');
     }
 
     /**

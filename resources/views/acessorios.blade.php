@@ -11,11 +11,29 @@
 <body>
 
     <x-app-layout>
+        <x-slot name="header">
+            <div class="container mx-auto px-4">
+                <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    {{ __('Tabela de Acessórios') }}
+                </div>
+            </div>
+        </x-slot>
         <x-slot name="body">
             <div class="container mx-auto px-4">
+                <a href="{{ route('acessorios.create') }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Inserir acessório</a>
+                <hr>
                 <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    <p>tg3rfgt25f4rg</p>
-                    <p>234f4rtf324tg35r</p>
+                    @foreach ($acessorios as $acessorio)
+                    <li>{{ $acessorio->nome }}|{{ $acessorio->modelo }}|{{ $acessorio->marca }}|{{ $acessorio->tipo }}|{{ $acessorio->preço }}|<br>
+                        <a href="{{ route('acessorios.edit', ['acessorio' => $acessorio->id]) }}">Editar</a>
+                        <form action="{{ route('acessorios.destroy',['acessorio' => $acessorio->id]) }}" method="post">
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">Deletar</button>
+                        </form>
+                        <hr>
+                    </li>
+                    @endforeach
                 </ul>
             </div>
         </x-slot>
