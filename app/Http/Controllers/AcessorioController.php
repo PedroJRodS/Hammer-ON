@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Acessorio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AcessorioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public readonly Acessorio $acessorio;
+
+    public function __construct()
+    {
+        $this->acessorio = new Acessorio();
+    }
+
     public function index()
     {
         //
