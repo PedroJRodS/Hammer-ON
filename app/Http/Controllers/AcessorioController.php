@@ -26,9 +26,6 @@ class AcessorioController extends Controller
         return view('acessorio_create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $created = $this->acessorio->create([
@@ -60,6 +57,8 @@ class AcessorioController extends Controller
     }
     public function destroy(string $id)
     {
-        //
+        $this->acessorio->where('id', $id)->delete();
+
+        return redirect()->route('acessorios.index');
     }
 }

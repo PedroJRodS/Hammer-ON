@@ -62,6 +62,7 @@ class InstrumentoController extends Controller
     public function destroy(string $id)
     {
         $this->instrumento->where('id', $id)->delete();
+
         return redirect()->route('instrumentos.index');
     }
 }
