@@ -45,22 +45,21 @@ class AcessorioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Acessorio $acessorio)
     {
-        //
+        return view('acessorio_edit', ['acessorio' => $acessorio]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
-    }
+        $updated = $this->acessorio->where('id', $id)->update($request->except(['_token', '_method']));
 
-    /**
-     * Remove the specified resource from storage.
-     */
+        if ($updated) {
+            return redirect()->back()->with('message', 'Acessório editado!');
+        }
+
+        return redirect()->back()->with('message', 'Falha na edição!');
+    }
     public function destroy(string $id)
     {
         //
