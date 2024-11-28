@@ -19,22 +19,43 @@
             </div>
         </x-slot>
         <x-slot name="body">
-            <div class="container mx-auto px-4">
+            <div class="container mx-auto px-4  font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 <a href="{{ route('instrumentos.create') }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Inserir instrumento</a>
-                <hr>
-                <ul class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    @foreach ($instrumentos as $instrumento)
-                    <li>{{ $instrumento->nome }}|{{ $instrumento->modelo }}|{{ $instrumento->marca }}|{{ $instrumento->tipo }}|{{ $instrumento->preço }}|<br>
-                        <a href="{{ route('instrumentos.edit', ['instrumento' => $instrumento->id]) }}">Editar</a>
-                        <form action="{{ route('instrumentos.destroy',['instrumento' => $instrumento->id]) }}" method="post">
-                            @csrf
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit">Deletar</button>
-                        </form>
-                        <hr>
-                    </li>
-                    @endforeach
-                </ul>
+                <table class="w-full">
+                    <thead class="sticky">
+                        <tr class="text-left">
+                            <th class="border border-slate-600">Nome</th>
+                            <th class="border border-slate-600">Modelo</th>
+                            <th class="border border-slate-600">Marca</th>
+                            <th class="border border-slate-600">Tipo</th>
+                            <th class="border border-slate-600">Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($instrumentos as $instrumento)
+                        <tr>
+                            <td class="border border-slate-700">{{ $instrumento->nome }}</td>
+                            <td class="border border-slate-700"> {{ $instrumento->modelo }}</td>
+                            <td class="border border-slate-700">{{ $instrumento->marca }}</td>
+                            <td class="border border-slate-700">{{ $instrumento->tipo }}</td>
+                            <td class="border border-slate-700">{{ $instrumento->preço }}</td>
+                            <td>
+                                <form action="{{ route('instrumentos.edit',['instrumento' => $instrumento->id]) }}" method="GET" class="border border-slate-700 text-center">
+                                    @csrf
+                                    <button type="submit">Editar</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('instrumentos.destroy',['instrumento' => $instrumento->id]) }}" method="post" class="border border-slate-700 text-center">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit">Deletar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </x-slot>
     </x-app-layout>
