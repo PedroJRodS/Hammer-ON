@@ -31,20 +31,18 @@ class AcessorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->acessorio->create([
+            'nome' => $request->input('nome'),
+            'marca' => $request->input('marca'),
+            'preço' => $request->input('preço'),
+        ]);
+        if ($created) {
+            return redirect()->back()->with('message', 'Acessório inserido!');
+        }
+
+        return redirect()->back()->with('message', 'Falha na inserção!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Acessorio $acessorio)
     {
         return view('acessorio_edit', ['acessorio' => $acessorio]);

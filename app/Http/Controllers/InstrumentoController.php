@@ -43,11 +43,6 @@ class InstrumentoController extends Controller
         return redirect()->back()->with('message', 'Falha na inserção!');
     }
 
-    public function show(string $id)
-    {
-        //
-    }
-
     public function edit(Instrumento $instrumento)
     {
         return view('instrumento_edit', ['instrumento' => $instrumento]);
