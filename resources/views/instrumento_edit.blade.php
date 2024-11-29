@@ -21,19 +21,19 @@
         <x-slot name="body">
             <div class="container mx-auto px-4">
                 <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-
-                    @if (session()->has('message'))
-                    {{ session()->get('message') }}
-                    @endif
-
                     <form action="{{ route('instrumentos.update',['instrumento' => $instrumento->id]) }}" method="post">
                         @csrf
                         <input type="hidden" name="_method" value="PUT">
                         <input type="text" name="nome" value="{{ $instrumento->nome }}">
+                        {{ $errors->first('nome') }}
                         <input type="text" name="modelo" value="{{ $instrumento->modelo }}">
+                        {{ $errors->first('modelo') }}
                         <input type="text" name="marca" value="{{ $instrumento->marca }}">
+                        {{ $errors->first('marca') }}
                         <input type="text" name="tipo" value="{{ $instrumento->tipo }}">
+                        {{ $errors->first('tipo') }}
                         <input type="number" name="preço" value="{{ $instrumento->preço }}">
+                        {{ $errors->first('preço') }}
                         <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Editar</button>
                     </form>
                 </div>
