@@ -23,18 +23,18 @@
                 <a href="{{ route('acessorios.create') }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Inserir acessório</a>
                 <table class="w-full">
                     <thead class="sticky">
-                        <tr class="text-left">
-                            <th class="border border-slate-600">Nome</th>
-                            <th class="border border-slate-600">Marca</th>
-                            <th class="border border-slate-600">Preço</th>
+                        <tr>
+                            <th class="border border-slate-600 text-center">NOME</th>
+                            <th class="border border-slate-600 text-center">MARCA</th>
+                            <th class="border border-slate-600 text-center">PREÇO</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($acessorios as $acessorio)
                         <tr>
-                            <td class="border border-slate-700">{{ $acessorio->nome }}</td>
-                            <td class="border border-slate-700">{{ $acessorio->marca }}</td>
-                            <td class="border border-slate-700">{{ $acessorio->preço }}</td>
+                            <td class="border border-slate-700 text-center">{{ $acessorio->nome }}</td>
+                            <td class="border border-slate-700 text-center">{{ $acessorio->marca }}</td>
+                            <td class="border border-slate-700 text-center">{{ $acessorio->preço }}</td>
                             <td>
                                 <form action="{{ route('acessorios.edit',['acessorio' => $acessorio->id]) }}" method="GET" class="border border-slate-700 text-center">
                                     @csrf

@@ -19,9 +19,9 @@
                     {{ session()->get('message') }}
                     @endif
 
-                    <form action="{{ route('acessorios.update',['acessorio' => $acessorio->id]) }}" method="post">
+                    <form action=" {{ route('acessorios.update',['acessorio' => $acessorio->id]) }}" method="post">
                         @csrf
-                        <input type="hidden" name="_method" value="PUT">
+                        <input type=" hidden" name="_method" value="PUT">
                         <input type="text" name="nome" value="{{ $acessorio->nome }}">
                         <input type="text" name="marca" value="{{ $acessorio->marca }}">
                         <input type="number" name="preço" value="{{ $acessorio->preço }}">

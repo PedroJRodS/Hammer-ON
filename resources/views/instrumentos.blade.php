@@ -23,22 +23,22 @@
                 <a href="{{ route('instrumentos.create') }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Inserir instrumento</a>
                 <table class="w-full">
                     <thead class="sticky">
-                        <tr class="text-left">
-                            <th class="border border-slate-600">Nome</th>
-                            <th class="border border-slate-600">Modelo</th>
-                            <th class="border border-slate-600">Marca</th>
-                            <th class="border border-slate-600">Tipo</th>
-                            <th class="border border-slate-600">Preço</th>
+                        <tr>
+                            <th class="border border-slate-600 text-center">NOME</th>
+                            <th class="border border-slate-600 text-center">MODELO</th>
+                            <th class="border border-slate-600 text-center">MARCA</th>
+                            <th class="border border-slate-600 text-center">TIPO</th>
+                            <th class="border border-slate-600 text-center">PREÇO</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($instrumentos as $instrumento)
                         <tr>
-                            <td class="border border-slate-700">{{ $instrumento->nome }}</td>
-                            <td class="border border-slate-700"> {{ $instrumento->modelo }}</td>
-                            <td class="border border-slate-700">{{ $instrumento->marca }}</td>
-                            <td class="border border-slate-700">{{ $instrumento->tipo }}</td>
-                            <td class="border border-slate-700">{{ $instrumento->preço }}</td>
+                            <td class="border border-slate-700 text-center">{{ $instrumento->nome }}</td>
+                            <td class="border border-slate-700 text-center"> {{ $instrumento->modelo }}</td>
+                            <td class="border border-slate-700 text-center">{{ $instrumento->marca }}</td>
+                            <td class="border border-slate-700 text-center">{{ $instrumento->tipo }}</td>
+                            <td class="border border-slate-700 text-center">{{ $instrumento->preço }}</td>
                             <td>
                                 <form action="{{ route('instrumentos.edit',['instrumento' => $instrumento->id]) }}" method="GET" class="border border-slate-700 text-center">
                                     @csrf
