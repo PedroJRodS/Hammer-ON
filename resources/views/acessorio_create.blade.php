@@ -11,6 +11,13 @@
 <body>
 
     <x-app-layout>
+        <x-slot name="header">
+            <div class="container mx-auto px-4">
+                <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    {{ __('Inserir Acessório') }}
+                </div>
+            </div>
+        </x-slot>
         <x-slot name="body">
             <div class="container mx-auto px-4">
                 <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -27,6 +34,7 @@
                         <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Inserir</button>
                     </form>
                 </div>
+                <a href="{{ route('acessorios.index') }}" class="dark:text-gray-200 leading-tight border border-slate-700">Voltar</a>
             </div>
         </x-slot>
     </x-app-layout>

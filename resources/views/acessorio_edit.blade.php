@@ -11,6 +11,13 @@
 <body>
 
     <x-app-layout>
+        <x-slot name="header">
+            <div class="container mx-auto px-4">
+                <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    {{ __('Editar Acessório') }}
+                </div>
+            </div>
+        </x-slot>
         <x-slot name="body">
             <div class="container mx-auto px-4">
                 <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -21,13 +28,14 @@
 
                     <form action=" {{ route('acessorios.update',['acessorio' => $acessorio->id]) }}" method="post">
                         @csrf
-                        <input type=" hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_method" value="PUT">
                         <input type="text" name="nome" value="{{ $acessorio->nome }}">
                         <input type="text" name="marca" value="{{ $acessorio->marca }}">
                         <input type="number" name="preço" value="{{ $acessorio->preço }}">
                         <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Editar</button>
                     </form>
                 </div>
+                <a href="{{ route('acessorios.index') }}" class="dark:text-gray-200 leading-tight border border-slate-700">Voltar</a>
             </div>
         </x-slot>
     </x-app-layout>

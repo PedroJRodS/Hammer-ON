@@ -11,6 +11,13 @@
 <body>
 
     <x-app-layout>
+        <x-slot name="header">
+            <div class="container mx-auto px-4">
+                <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    {{ __('Editar Instrumento') }}
+                </div>
+            </div>
+        </x-slot>
         <x-slot name="body">
             <div class="container mx-auto px-4">
                 <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
