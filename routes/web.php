@@ -24,4 +24,4 @@ require __DIR__ . '/auth.php';
 
 Route::resource('instrumentos', InstrumentoController::class)->middleware('auth');
 
-Route::resource('acessorios', AcessorioController::class);
+Route::resource('acessorios', AcessorioController::class)->middleware('auth');
