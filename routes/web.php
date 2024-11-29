@@ -22,6 +22,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::resource('instrumentos', InstrumentoController::class);
+Route::resource('instrumentos', InstrumentoController::class)->middleware('auth');
 
 Route::resource('acessorios', AcessorioController::class);
