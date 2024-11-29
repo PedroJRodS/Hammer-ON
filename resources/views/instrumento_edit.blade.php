@@ -27,9 +27,10 @@
                         <input type="text" name="marca" value="{{ $instrumento->marca }}">
                         <input type="text" name="tipo" value="{{ $instrumento->tipo }}">
                         <input type="number" name="preço" value="{{ $instrumento->preço }}">
-                        <button type="submit">Editar</button>
+                        <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Editar</button>
                     </form>
                 </div>
+                <a href="{{ route('instrumentos.index') }}" class="dark:text-gray-200 leading-tight border border-slate-700">Voltar</a>
             </div>
         </x-slot>
     </x-app-layout>

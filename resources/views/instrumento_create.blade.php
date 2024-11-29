@@ -26,7 +26,7 @@
                         <input type="text" name="marca" placeholder="Marca do Instrumento">
                         <input type="text" name="tipo" placeholder="Tipo do Instrumento">
                         <input type="number" name="preço" placeholder="Preço do Instrumento">
-                        <button type="submit">Inserir</button>
+                        <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Inserir</button>
                     </form>
                 </div>
             </div>

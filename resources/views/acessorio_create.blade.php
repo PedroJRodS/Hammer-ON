@@ -24,7 +24,7 @@
                         <input type="text" name="nome" placeholder="Nome do Acessório">
                         <input type="text" name="marca" placeholder="Marca do Acessório">
                         <input type="number" name="preço" placeholder="Preço do Acessório">
-                        <button type="submit">Inserir</button>
+                        <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Inserir</button>
                     </form>
                 </div>
             </div>

@@ -25,7 +25,7 @@
                         <input type="text" name="nome" value="{{ $acessorio->nome }}">
                         <input type="text" name="marca" value="{{ $acessorio->marca }}">
                         <input type="number" name="preço" value="{{ $acessorio->preço }}">
-                        <button type="submit">Editar</button>
+                        <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Editar</button>
                     </form>
                 </div>
             </div>
