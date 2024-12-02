@@ -14,7 +14,7 @@
         <x-slot name="header">
             <div class="container mx-auto px-4">
                 <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                    {{ __('Editar Instrumento') }}
+                    {{ __('Inserir Marca') }}
                 </div>
             </div>
         </x-slot>
@@ -26,18 +26,13 @@
                     {{ session()->get('message') }}
                     @endif
 
-                    <form action="{{ route('instrumentos.update',['instrumento' => $instrumento->id]) }}" method="post">
+                    <form action="{{ route('marcas.store') }}" method="post">
                         @csrf
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type="text" name="nome" value="{{ $instrumento->nome }}">
-                        <input type="text" name="modelo" value="{{ $instrumento->modelo }}">
-                        <input type="text" name="marca" value="{{ $instrumento->marca }}">
-                        <input type="text" name="tipo" value="{{ $instrumento->tipo }}">
-                        <input type="number" name="preço" value="{{ $instrumento->preço }}">
-                        <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Editar</button>
+                        <input type="text" name="nome" placeholder="Nome da marca">
+                        <button type="submit" class="dark:text-gray-200 leading-tight border border-slate-700">Inserir</button>
                     </form>
                 </div>
-                <a href="{{ route('instrumentos.index') }}" class="dark:text-gray-200 leading-tight border border-slate-700">Voltar</a>
+                <a href="{{ route('marcas.index') }}" class="dark:text-gray-200 leading-tight border border-slate-700">Voltar</a>
             </div>
         </x-slot>
     </x-app-layout>

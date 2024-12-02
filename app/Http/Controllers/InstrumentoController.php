@@ -41,14 +41,6 @@ class InstrumentoController extends Controller
         }
 
         return redirect()->back()->with('message', 'Falha na inserção!');
-
-        $validated = $request->validate([
-            'nome' => 'required',
-            'modelo' => 'required',
-            'marca' => 'required',
-            'tipo' => 'required',
-            'preço' => 'required',
-        ]);
     }
 
     public function edit(Instrumento $instrumento)

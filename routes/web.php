@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Instrumento;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AcessorioController;
 use App\Http\Controllers\InstrumentoController;
-use App\Models\Instrumento;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -25,3 +26,5 @@ require __DIR__ . '/auth.php';
 Route::resource('instrumentos', InstrumentoController::class)->middleware('auth');
 
 Route::resource('acessorios', AcessorioController::class)->middleware('auth');
+
+Route::resource('marcas', MarcaController::class)->middleware('auth');

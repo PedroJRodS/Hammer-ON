@@ -20,6 +20,11 @@
                         {{ __('Acessórios') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('marcas.index')" :active="request()->routeIs('marcas.index')">
+                        {{ __('Marcas') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -79,6 +84,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('acessorios.index')" :active="request()->routeIs('acessorios.index')">
                 {{ __('Acessórios') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('marcas.index')" :active="request()->routeIs('marcas.index')">
+                {{ __('Marcas') }}
             </x-responsive-nav-link>
         </div>
 
